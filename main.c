@@ -208,40 +208,122 @@ int main(void) {
 
     switch (input[0] - '0') /* char to int */ {
         case 0:
-            printf("Zero");
+            printf("Zero\n");
             break;
         case 1:
-            printf("One");
+            printf("One\n");
         break;
         case 2:
-            printf("Two");
+            printf("Two\n");
         break;
         case 3:
-            printf("Three");
+            printf("Three\n");
         break;
         case 4:
-            printf("Four");
+            printf("Four\n");
         break;
         case 5:
-            printf("Five");
+            printf("Five\n");
         break;
         case 6:
-            printf("Six");
+            printf("Six\n");
         break;
         case 7:
-            printf("Seven");
+            printf("Seven\n");
         break;
         case 8:
-            printf("Eight");
+            printf("Eight\n");
         break;
         case 9:
-            printf("Nine");
+            printf("Nine\n");
         break;
         default:
             printf("No case triggered.\n");
     }
 
-    // To be continued...
+    // While Loop
+
+    int i = 0;
+
+    while (i <= input[0] - '0') {
+        printf("%i\n", i);
+        i++;
+    }
+
+    // Do While Loop
+
+    i = 0;
+
+    do {
+        printf("%i\n", i);
+        i++;
+    } while (i <= input[0] - '0');
+
+    // For Loop
+
+    for (i = 0; i <= input[0] - '0'; i++) {
+        printf("%i\n", i);
+    }
+
+    // Break and Continue
+
+    for (i = 0; i <= input[0] - '0'; i++) {
+        if (i % 2 == 0) {
+            continue;
+        }
+
+        if (i == 5) {
+            break;
+        }
+
+        printf("%i\n", i);
+    }
+
+    // Arrays
+
+    int numbers[6] = {0, 1, 2, 3, 4, 5};
+    printf("Arrays: %d\n", numbers[0]);
+
+    numbers[0] = 99;
+    printf("Changing Element: %d\n", numbers[0]);
+
+    // Array size
+
+    const int anotherNumbers[] = {99, 98, 97, 96, 95, 94, 93};
+    printf("Array Size: %llu\n", sizeof(anotherNumbers));
+
+    const int length = sizeof(anotherNumbers) / sizeof(anotherNumbers[0]);
+    printf("Array Length: %d\n", length);
+
+    // Loop through an array
+
+    for (i = 0; i < sizeof(numbers) / sizeof(numbers[0]); i++) {
+        printf("%i\n", numbers[i]);
+    }
+
+    // Multi-dimensional arrays
+
+    const int matrix[2][3][2] = { {{1, 2}, {3, 4}, {5, 6}}, {{7, 8}, {9, 10}, {11, 12}} };
+
+    printf("Multi-dimensional Arrays: %i\n", matrix[0][1][1]);
+    printf("Multi-dimensional Arrays: %i\n", matrix[1][2][0]);
+
+    // Memory Address
+
+    printf("Memory Address: %p\n", &matrix);
+
+    // Pointers
+
+    const int* pointer = &i;
+
+    printf(
+        "Value: %i\n"
+        "Address: %p\n"
+        "Pointer: %i\n",
+        i,
+        &i,
+        *pointer // It holds address of the variable, with *, you can dereference it
+    );
 
     return 0;
 }
